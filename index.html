@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Assignment - Registration, Table & Responsive UI</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    /* Optional custom tweaks */
+    body {
+      padding-top: 4.5rem; /* Ensure content clears fixed navbar */
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Site</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-4">
+    <!-- Registration Form -->
+    <section id="registration">
+      <h2 class="mb-3">Registration Form</h2>
+
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstName" required>
+            <div class="invalid-feedback">First Name is required.</div>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required>
+            <div class="invalid-feedback">Last Name is required.</div>
+          </div>
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">Valid Email is required.</div>
+          </div>
+          <div class="col-12">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" minlength="6" required>
+            <div class="invalid-feedback">Password is required (min 6 chars).</div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="terms" required>
+              <label class="form-check-label" for="terms">I agree to the terms &amp; conditions</label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-success" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <!-- User Data Table -->
+    <section id="data-table" class="mt-5">
+      <h2 class="mb-3">Registered Users (Sample Data)</h2>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Alice</td>
+              <td>Anderson</td>
+              <td>alice@example.com</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Bob</td>
+              <td>Brown</td>
+              <td>bob@example.com</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Carol</td>
+              <td>Clark</td>
+              <td>carol@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Images & Buttons -->
+    <section id="images" class="mt-5">
+      <div class="container-fluid p-0">
+        <img src="https://picsum.photos/1200/400" alt="Banner" class="img-fluid w-100">
+      </div>
+      <div class="text-center my-4">
+        <img src="https://picsum.photos/200" alt="Profile" class="rounded-circle">
+      </div>
+      <div class="d-flex justify-content-center gap-3 mb-5">
+        <button class="btn btn-primary">Always Visible</button>
+        <button class="btn btn-secondary d-none d-md-block">Hidden on &lt; md</button>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mt-5">
+      <h2>About</h2>
+      <p>Placeholder content for about section.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="mt-5 mb-5">
+      <h2>Contact</h2>
+      <p>Placeholder content for contact section.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-light text-center py-3">
+    <small>&copy; 2025 Noah Lehman</small>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
